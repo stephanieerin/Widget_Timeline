@@ -1,0 +1,14 @@
+window.onload = function () {
+	
+	var timeline = document.getElementById("timeline");
+	setInterval(function () {
+			var current = new Date();	
+			console.log(current);
+			var time = document.createElement("p");
+			time.innerHTML = current;
+			timeline.appendChild(time);
+		
+		}, 1000);
+
+	
+	};

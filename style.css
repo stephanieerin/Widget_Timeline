@@ -1,0 +1,19 @@
+.element {
+	float: left;
+	background: silver;
+	width: 20px;
+	font: silver;
+	}
+	
+	.element:hover {
+	width:200px;	
+	font: black;
+		}
+		
+#container {
+	width: 80%;	
+	height: 150px;
+	overflow-x: scroll;
+	margin: auto;
+	
+	}

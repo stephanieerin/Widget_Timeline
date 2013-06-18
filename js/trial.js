@@ -7,12 +7,14 @@
 window.onload = function(){
 		
 	call_with_random();
-	var interval = setInterval(call_with_random, 2000);
+	var interval = setInterval(call_with_random, 1000);
 	
 	document.getElementById("stop_button").onclick = function (){
 		interval = clearInterval(interval);		
 		
 		};
+		
+		$('#container').jscroll();
 	
 };
 
@@ -28,7 +30,7 @@ function add(num){
 	piece.className = "element";
 	piece.style.height = (num * 5) + "px";
 	piece.onclick = send;
-	//piece.style = "height: " + num * 10 + "px;";
+		//piece.style = "height: " + num * 10 + "px;";
 	
  container.appendChild(piece);
 		

@@ -7,7 +7,7 @@
 window.onload = function(){
 		
 	call_with_random();
-	var interval = setInterval(call_with_random, 2000);
+	var interval = setInterval(call_with_random, 1000);
 	
 	document.getElementById("stop_button").onclick = function (){
 		interval = clearInterval(interval);		
@@ -27,8 +27,8 @@ function add(num){
 	piece.time = time;
 	piece.className = "element";
 	piece.style.height = (num * 5) + "px";
-	piece.onclick = function () {console.log(this.time);};
-	//piece.style = "height: " + num * 10 + "px;";
+	piece.onclick = send;
+		//piece.style = "height: " + num * 10 + "px;";
 	
  container.appendChild(piece);
 		
@@ -42,7 +42,7 @@ function add(num){
 		
 		}
 		
-function send(time){
-	console.log(time);
+function send(){
+	console.log(this.time);
 	
 	}

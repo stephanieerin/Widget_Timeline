@@ -4,12 +4,12 @@
 	width: 10px;
 	white-space: nowrap;
 	vertical-align: bottom;
-	}
+}
 	
 .element:hover {
 	background: yellow;
 	font: black;
-	}
+}
 		
 #container {
 	overflow-x:scroll;
@@ -18,4 +18,4 @@
 	line-height: 100px;
 	white-space: nowrap;
 	margin:auto;
-	}
+}

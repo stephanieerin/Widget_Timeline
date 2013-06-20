@@ -9,69 +9,25 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="http://everest-build/owf-sample-html/js/owf-widget-debug.js"></script>
-	<script type="text/javascript">
-		
-		var logger, appender;
-		if (window.owfdojo){
-			var logger = OWF.Log.getDefaultLogger();
-			var appender = logger.getEffectiveAppenders()[0];
-			appender.setThreshold(log4javascript.Level.INFO);
-			
-			OWF.Log.setEnabled(true);
-			
-			owfdojo.ready(function() {
-					OWF.ready(function(){
-						OWF.notifyWidgetReady();
-						
-					});	
-			}	);	
-		}		
-		
-	window.onload = function(){
-	
-		call_with_random();
-		var interval = setInterval(call_with_random, 1000);
-	
-	};
-	
-	
-	function add(num){
-	
-		var container = document.getElementById("container");
-		var current = container.childNodes;
-		var time = new Date();
-		
-		var piece = document.createElement("span");
-		piece.time = time;
-		piece.className = "element";
-		piece.style.height = (num * 5) + "px";
-		piece.onclick = send;
-			
-		container.insertBefore(piece, current[0]);
-		
-	}
-		
-	function call_with_random(){
-	
-		var rand = Math.floor((Math.random() * 20) +1);
-		add(rand);
-			
-	}
-			
-	function send(){
-		logger.info(this.time);
-		
-	}
-	
-	
-	</script>
+	<!--<script type="text/javascript" src="trial.js"></script> -->
+	<script type="text/javascript" src="intents.js"></script>
 </head>
 
 <body>
+<div id="message"></div>
 
 <div id="container">
 
 
 </div>
+<script type="text/javascript" >
+	call_with_random();
+	setInterval(call_with_random, 1000);
+	
+	var msg = 'Running in OWF: ' + (OWF.Util.isRunningInOWF()?"Yes":"No");
+	document.getElementById("message").innerHTML = msg;
+	document.getElementById("message").style.display = 'block';
+	
+</script>
 </body>
 </html>

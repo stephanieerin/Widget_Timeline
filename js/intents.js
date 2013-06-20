@@ -2,11 +2,19 @@ OWF.relayFile = '/owf-sample-html/js/eventing/rpc_relay.uncompressed.html';
 	
 function init() {
 	document.getElementById("message").innerHTML = new Date();
-	OWF.Eventing.subscribe("testChannel", this.add);		
+	OWF.Eventing.subscribe("testChannel", this.set);		
 }
 		
-var add = function(sender, msg){
+var set = function(sender, msg){
+		
+	
+	
 		var num = parseInt(msg);
+	
+}
+		
+var add = function(num){
+
 		var container = document.getElementById("container");
 		var current = container.childNodes;
 		var time = new Date();
@@ -17,6 +25,13 @@ var add = function(sender, msg){
 		piece.style.height = (num * 5) + "px";
 		//piece.onclick = send;
 	 	container.insertBefore(piece, current[0]);
+	 	
+	 	
+	 	var count = parseInt(document.getElementById("counter").innerHTML);
+	 	count = count + 1;
+	 	document.getElementById("counter").innerHTML = count;
+	 	
+	 	OWF.Eventing.publish("testChannel", new Date());
 };
 		
 owfdojo.addOnLoad(function(){

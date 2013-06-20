@@ -17,6 +17,11 @@ var add = function(sender, msg){
 		piece.style.height = (num * 5) + "px";
 		//piece.onclick = send;
 	 	container.insertBefore(piece, current[0]);
+	 	
+	 	
+	 	var count = parseInt(document.getElementById("counter").innerHTML);
+	 	count = count + 1;
+	 	document.getElementById("counter").innerHTML = count;
 };
 		
 owfdojo.addOnLoad(function(){

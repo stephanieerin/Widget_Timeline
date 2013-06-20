@@ -15,7 +15,6 @@ $(document).ready(function () {
 			});
 			
 			OWF.Intents.receive ({
-				action: 'remove',
 				dataType: 'text'				
 				}, function(sender, intent, msg){
 					document.getElementById("message").innerHTML = "remove " + msg;

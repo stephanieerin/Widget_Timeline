@@ -11,7 +11,23 @@
 	<script type="text/javascript" src="http://everest-build/owf-sample-html/js/owf-widget-debug.js"></script>
 	<script type="text/javascript">
 		
-	window.onload = function(){
+		var logger, appender;
+		if (window.owfdojo){
+			var logger = OWF.Log.getDefaultLogger();
+			var appender = logger.getEffectiveAppenders()[0];
+			appender.setThreshold(log4javascript.Level.INFO);
+			
+			OWF.Log.setEnabled(true);
+			
+			owfdojo.ready(function() {
+					OWF.ready(function(){
+						OWF.notifyWidgetReady();
+						
+					});	
+			}	);	
+		}		
+		
+	function do_stuff(){
 	
 		call_with_random();
 		var interval = setInterval(call_with_random, 1000);
@@ -43,7 +59,7 @@
 	}
 			
 	function send(){
-		console.log(this.time);
+		logger.info(this.time);
 		
 	}
 	
@@ -52,10 +68,20 @@
 </head>
 
 <body>
+<div id="message"></div>
 
 <div id="container">
 
 
 </div>
+<script type="text/javascript" >
+	call_with_random();
+	setInterval(call_with_random, 1000);
+	
+	var msg = 'Running in OWF: ' + (OWF.Util.isRunningInOWF()?"Yes":"No");
+	document.getElementById("message").innerHTML = msg;
+	document.getElementById("message").style.display = 'block';
+	
+</script>
 </body>
 </html>

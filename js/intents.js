@@ -24,8 +24,6 @@ var add = function(sender, msg){
 	 	var count = parseInt(document.getElementById("counter").innerHTML);
 	 	count = count + 1;
 	 	document.getElementById("counter").innerHTML = count;
-	 	
-//	 	OWF.Eventing.publish("testChannel", count);
 };
 		
  // owfdojo stuff (when ready, call init)

@@ -1,27 +1,36 @@
-$(document).ready(function () {
+OWF.relayFile = '/owf-sample-html/js/eventing/rpc_relay.uncompressed.html';
 	
-	OWF.ready(function(){
+function init() {
+	document.getElementById("message").innerHTML = new Date();
+	OWF.Eventing.subscribe("testChannel", this.add);		
+}
 		
-		OWF.Eventing.subscribe('owf-everest.testing', function(sender, msg, channel){
-				document.getElementById("message").innerHTML =  "subscribe " + msg;
-			});
-			
-		OWF.Intents.receive({
-			action: 'add',
-			dataType: 'text'			
-			}, function(sender, intent, msg){
-				document.getElementById("message").innerHTML = "add " + msg;				
-			
-			});
-			
-			OWF.Intents.receive ({
-				dataType: 'text'				
-				}, function(sender, intent, msg){
-					document.getElementById("message").innerHTML = "remove " + msg;
-					
-				});
+var add = function(sender, msg){
+		var num = parseInt(msg);
+		var container = document.getElementById("container");
+		var current = container.childNodes;
+		var time = new Date();
+	
+		var piece = document.createElement("span");
+		piece.time = time;
+		piece.className = "element";
+		piece.style.height = (num * 5) + "px";
+		//piece.onclick = send;
+	 	container.insertBefore(piece, current[0]);
+};
 		
-			OWF.notifyWidgetReady();
-		
-		});	
+owfdojo.addOnLoad(function(){
+	OWF.ready(init);
 });
+
+function call_with_random(){
+
+	var rand = Math.floor((Math.random() * 20) +1);
+	add(rand);
+		
+}
+		
+function send(){
+	console.log(this.time);
+	
+}

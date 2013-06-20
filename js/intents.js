@@ -10,6 +10,7 @@ var set = function(sender, msg){
 	
 	
 		var num = parseInt(msg);
+		add(num);
 	
 }
 		

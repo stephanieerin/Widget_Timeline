@@ -32,7 +32,7 @@ var add = function(num){
 	 	count = count + 1;
 	 	document.getElementById("counter").innerHTML = count;
 	 	
-	 	OWF.Eventing.publish("testChannel", new Date());
+	 	OWF.Eventing.publish("testChannel", count);
 };
 		
 owfdojo.addOnLoad(function(){

@@ -2,20 +2,20 @@ OWF.relayFile = '/owf-sample-html/js/eventing/rpc_relay.uncompressed.html';
 	
 function init() {
 	document.getElementById("message").innerHTML = new Date();
-	OWF.Eventing.subscribe("testChannel", this.set);		
+	OWF.Eventing.subscribe("testChannel", this.add);		
 }
 		
 var set = function(sender, msg){
 		
 	
 	
-		var num = parseInt(msg);
+
 		add(num);
 	
 }
 		
-var add = function(num){
-
+var add = function(sender, msg){
+		var num = parseInt(msg);
 		var container = document.getElementById("container");
 		var current = container.childNodes;
 		var time = new Date();

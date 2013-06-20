@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	
-	OWF.ready(function()){
+	OWF.ready(function(){
 		
 		OWF.Eventing.subscribe('owf-everest.testing', function(sender, msg, channel){
 				document.getElementById("message").innerHTML =  "subscribe " + msg;

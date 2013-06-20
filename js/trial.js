@@ -1,13 +1,5 @@
-// option 1
-// get a timestamp, add it to the histogram
-
-// option 2
-// every second get a number of events, add them to histogram
-
-
-
 window.onload = function(){
-		
+	
 	call_with_random();
 	var interval = setInterval(call_with_random, 1000);
 
@@ -31,17 +23,17 @@ function add(num){
 	
  	container.insertBefore(piece, current[0]);
 	
-	}
+}
 	
-	function call_with_random(){
+function call_with_random(){
 
-		var rand = Math.floor((Math.random() * 20) +1);
-		add(rand);
-
+	var rand = Math.floor((Math.random() * 20) +1);
+	add(rand);
 		
-		}
+}
 		
 function send(){
 	console.log(this.time);
 	
-	}
+}
+

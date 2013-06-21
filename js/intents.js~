@@ -20,7 +20,6 @@ var make = function(sender, msg){
 		
 	// when information is received, add a bar to the timeline
 var add = function(time, num){
-		var num = parseInt(msg);
 		var container = document.getElementById("container");
 		var current = container.childNodes;
 //		var time = new Date();
@@ -29,6 +28,7 @@ var add = function(time, num){
 		piece.time = time;
 		piece.className = "element";
 		piece.style.height = (num * 5) + "px";
+		piece.id = time;
 		//piece.onclick = send;
 	 	container.insertBefore(piece, current[0]);
 	 	

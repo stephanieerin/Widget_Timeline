@@ -29,7 +29,7 @@ var add = function(time, num){
 		piece.className = "element";
 		piece.style.height = (num * 5) + "px";
 		piece.id = time;
-		//piece.onclick = send;
+		piece.onclick = send;
 	 	container.insertBefore(piece, current[0]);
 	 	
 	 	
@@ -53,8 +53,7 @@ function call_with_random(){
 }
 	//	send time information on click
 function send(){
-	console.log(this.time);
-	//OWF.Eventing.publish(this.time);
+	OWF.Eventing.publish("testChannel2", this.time);
 	
 	// problem: subscribing to the channel means that if you publish to it you end
 	// up in an infinite loop. fix?

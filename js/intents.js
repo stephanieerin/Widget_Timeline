@@ -53,7 +53,7 @@ function call_with_random(){
 }
 	//	send time information on click
 function send(){
-	OWF.Eventing.publish("testChannel2", this.time);
+	OWF.Eventing.publish("testChannel2", this.id);
 	
 	// problem: subscribing to the channel means that if you publish to it you end
 	// up in an infinite loop. fix?

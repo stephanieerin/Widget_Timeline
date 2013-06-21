@@ -7,7 +7,7 @@ function init() {
 }
 
 var make = function(sender, msg){
-	var objs = msg.eval();
+	var objs = msg;
 	document.getElementById("message").innerHTML = objs[0];
 	
 	

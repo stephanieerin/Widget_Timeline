@@ -3,8 +3,15 @@ OWF.relayFile = '/owf-sample-html/js/eventing/rpc_relay.uncompressed.html';
 	
 	// initialize subscription to channel
 function init() {
-	OWF.Eventing.subscribe("testChannel", this.add);		
+	OWF.Eventing.subscribe("testChannel1", this.make);		
 }
+
+var make = function(sender, msg){
+	var objs = msg.eval();
+	document.getElementById("message").innerHTML = objs[0];
+	
+	
+	};
 		
 	// when information is received, add a bar to the timeline
 var add = function(sender, msg){

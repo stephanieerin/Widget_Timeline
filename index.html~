@@ -11,28 +11,7 @@
 	<script type="text/javascript" src="http://everest-build/owf-sample-html/js/owf-widget-debug.js"></script>
 	<script type="text/javascript" src="https://everest-owf:8443/owf/js-min/owf-widget-min.js"></script>
 	<script type="text/javascript" src="js/intents.js"></script>
-	<script type="text/javascript" >
 
-	OWF.relayFile = '/owf-sample-html/js/eventing/rpc_relay.uncompressed.html';
-	
-		function init() {
-			document.getElementById("container").innerHTML = new Date();
-			OWF.Eventing.subscribe("testChannel", this.update);			
-			
-			}
-		var update = function(sender, msg){
-			var count = parseInt(document.getElementById("counter").innerHTML);			
-			count = count + 1;
-			document.getElementById("counter").innerHTML = count;
-			document.getElementById("message").innerHTML = msg;
-		};
-		
-		owfdojo.addOnLoad(function(){
-			OWF.ready(init);
-			
-			});
-	
-</script>
 </head>
 
 <body>

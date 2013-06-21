@@ -1,5 +1,10 @@
 OWF.relayFile = '/owf-sample-html/js/eventing/rpc_relay.uncompressed.html';
 	
+var EVENTS = [];	
+function Event(t, n){
+	this.time = t;
+	this.num = n;	
+	}
 	
 	// initialize subscription to channel
 function init() {
@@ -13,6 +18,10 @@ var make = function(sender, msg){
 	
 	var num = objs.length;
 	var time = new Date();
+	var e = new Event(time, msg);
+
+	EVENTS.push(e)	
+	
 	add(time, num)
 	
 	

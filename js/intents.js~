@@ -1,5 +1,10 @@
 OWF.relayFile = '/owf-sample-html/js/eventing/rpc_relay.uncompressed.html';
 	
+var EVENTS = [];	
+function Event(t, n){
+	this.time = t;
+	this.num = n;	
+	}
 	
 	// initialize subscription to channel
 function init() {
@@ -13,6 +18,10 @@ var make = function(sender, msg){
 	
 	var num = objs.length;
 	var time = new Date();
+	var e = new Event(time, msg);
+
+	EVENTS.push(e)	
+	
 	add(time, num)
 	
 	
@@ -53,7 +62,7 @@ function call_with_random(){
 }
 	//	send time information on click
 function send(){
-	OWF.Eventing.publish("testChannel2", this.time);
+	OWF.Eventing.publish("testChannel2", this.id);
 	
 	// problem: subscribing to the channel means that if you publish to it you end
 	// up in an infinite loop. fix?

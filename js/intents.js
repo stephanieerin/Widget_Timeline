@@ -68,7 +68,7 @@ function send(){
 						msg = this.msg;
 			}				
 		}
-	OWF.Eventing.publish("testChannel2", msg);
+	OWF.Eventing.publish("testChannel2", "hello");
 	
 
 }

@@ -18,7 +18,7 @@ var make = function(sender, msg){
 	
 	var num = objs.length;
 	var time = new Date();
-	var e = new Event(time, msg);
+	var e = new Event(time, "hello");
 
 	EVENTS.push(e)	
 	

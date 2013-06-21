@@ -12,23 +12,22 @@ function init() {
 }
 
 var make = function(sender, msg){
-	var objs = msg.substr(1,msg.length-1);
-	objs = objs.split(",");
-	document.getElementById("message").innerHTML = objs[0];
-	
-	var num = objs.length;
-	var time = new Date();
-	var e = new Event(time, "hello");
 
-	EVENTS.push(e)	
-	
-	add(time, num)
-	
 	
 	};
 		
 	// when information is received, add a bar to the timeline
-var add = function(time, num){
+var add = function(sender, msg){
+		var objs = msg.substr(1,msg.length-1);
+		objs = objs.split(",");
+	
+		var num = objs.length;
+		var time = new Date();
+		var e = new Event(time, msg);
+
+		EVENTS.push(e)	
+	
+	
 		var container = document.getElementById("container");
 		var current = container.childNodes;
 //		var time = new Date();
@@ -63,13 +62,8 @@ function call_with_random(){
 }
 	//	send time information on click
 function send(){
-	var msg = "invalid";
-	for(var i = 0; i < EVENTS.length; i++){
-		if (EVENTS[i].time == this.id){
-						msg = this.msg;
-			}				
-		}
-	OWF.Eventing.publish("testChannel2", msg);
+	
+	OWF.Eventing.publish("testChannel2", this.msg);
 	
 
 }

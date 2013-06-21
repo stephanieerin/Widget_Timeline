@@ -8,34 +8,28 @@ function Event(t, m){
 	
 	// initialize subscription to channel
 function init() {
-	OWF.Eventing.subscribe("testChannel1", this.make);		
+	OWF.Eventing.subscribe("testChannel1", this.add);		
 }
 
-var make = function(sender, msg){
-	var objs = msg.substr(1,msg.length-1);
-	objs = objs.split(",");
-	document.getElementById("message").innerHTML = objs[0];
-	
-	var num = objs.length;
-	var time = new Date();
-	var e = new Event(time, "hello");
-
-	EVENTS.push(e)	
-	
-	add(time, num)
-	
-	
-	};
 		
 	// when information is received, add a bar to the timeline
-var add = function(time, num){
+var add = function(sender, msg){
+		var objs = msg.substr(1,msg.length-1);
+		objs = objs.split(",");
+	
+		var num = objs.length;
+		var time = new Date();
+//		var e = new Event(time, msg);
+
+//		EVENTS.push(e)	
+	
+	
 		var container = document.getElementById("container");
 		var current = container.childNodes;
-//		var time = new Date();
 	
 		var piece = document.createElement("span");
 		piece.time = time;
-		piece.msg = "hello";
+		piece.msg = msg;
 		piece.className = "element";
 		piece.style.height = (num * 5) + "px";
 		piece.id = time;

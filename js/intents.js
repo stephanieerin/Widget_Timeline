@@ -7,8 +7,8 @@ function init() {
 }
 
 var make = function(sender, msg){
-	var objs = msg;
-	document.getElementById("message").innerHTML = objs[0];
+	var objs = msg.substr(1,msg.length);
+	document.getElementById("message").innerHTML = objs;
 	
 	
 	};
@@ -33,11 +33,7 @@ var add = function(sender, msg){
 	 	document.getElementById("counter").innerHTML = count;
 };
 
-var set = function(sender, msg){
-		
-	
-};
-		
+
  // owfdojo stuff (when ready, call init)
 owfdojo.addOnLoad(function(){
 	OWF.ready(init);

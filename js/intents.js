@@ -11,20 +11,24 @@ var make = function(sender, msg){
 	objs = objs.split(",");
 	document.getElementById("message").innerHTML = objs[0];
 	
+	var num = objs.length;
+	var time = new Date();
+	add(time, num)
+	
 	
 	};
 		
 	// when information is received, add a bar to the timeline
-var add = function(sender, msg){
-		var num = parseInt(msg);
+var add = function(time, num){
 		var container = document.getElementById("container");
 		var current = container.childNodes;
-		var time = new Date();
+//		var time = new Date();
 	
 		var piece = document.createElement("span");
 		piece.time = time;
 		piece.className = "element";
 		piece.style.height = (num * 5) + "px";
+		piece.id = time;
 		//piece.onclick = send;
 	 	container.insertBefore(piece, current[0]);
 	 	

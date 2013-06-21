@@ -7,8 +7,9 @@ function init() {
 }
 
 var make = function(sender, msg){
-	var objs = msg.substr(1,msg.length);
-	document.getElementById("message").innerHTML = objs;
+	var objs = msg.substr(1,msg.length-1);
+	objs = objs.split(",");
+	document.getElementById("message").innerHTML = objs[0];
 	
 	
 	};

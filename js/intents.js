@@ -35,6 +35,7 @@ var add = function(time, num){
 	
 		var piece = document.createElement("span");
 		piece.time = time;
+		piece.msg = "hello";
 		piece.className = "element";
 		piece.style.height = (num * 5) + "px";
 		piece.id = time;
@@ -62,13 +63,8 @@ function call_with_random(){
 }
 	//	send time information on click
 function send(){
-	var msg = "invalid";
-	for(var i = 0; i < EVENTS.length; i++){
-		if (EVENTS[i].time == this.id){
-						msg = this.msg;
-			}				
-		}
-	OWF.Eventing.publish("testChannel2", "hello");
+	
+	OWF.Eventing.publish("testChannel2", this.msg);
 	
 
 }

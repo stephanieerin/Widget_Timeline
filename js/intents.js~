@@ -35,6 +35,7 @@ var add = function(time, num){
 	
 		var piece = document.createElement("span");
 		piece.time = time;
+		piece.msg = "hello";
 		piece.className = "element";
 		piece.style.height = (num * 5) + "px";
 		piece.id = time;

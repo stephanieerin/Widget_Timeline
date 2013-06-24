@@ -22,12 +22,13 @@ var add = function add(sender, msg){
 	
 	for (var i = 0; i < objs.length; i++){
 			var time = new Date(objs[i]);
-			var month = time.getMonth();
+			console.log(time);
+			var month = time.getMonth().toString();
 			if (month < 10){
 				month = "0" + month;				
 			}
-			var day = time.getDate();
-			var year = time.getYear();	
+			var day = time.getDate().toString();
+			var year = time.getYear().toString();	
 			var key = year + month + day;
 			console.log(key);
 			

@@ -29,6 +29,9 @@ var add = function add(sender, msg){
 			var day = time.getDate();
 			var year = time.getYear();	
 			var key = year + month + day;
+			console.log(key);
+			
+			if (EVENTS.length > 0) {
 			
 			for (var k = 0; k < EVENTS.length; k++){
 				if(key == EVENTS[k].key){
@@ -51,7 +54,22 @@ var add = function add(sender, msg){
 						EVENTS.push(e);
 				}
 			}
+		} else {
+			console.log(key + " is first element");
+			var e = new Event(time, key);
+			e.count = 1;
+									
+			var container = document.getElementById("container");
+			var bar = document.createElement("span");
+			bar.className = "element";
+			bar.style.height = (e.count * 10) + "px";
+			bar.id = key;
+			bar.onclick = send;
+		 	container.appendChild(bar);
+			 	
+			EVENTS.push(e);
 		}
+	}
 };
 
 var send = function send(){

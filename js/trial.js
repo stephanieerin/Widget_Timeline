@@ -29,16 +29,16 @@ var add = function add(sender, msg){
 			}
 			var day = time.getDate().toString();
 			var year = time.getYear().toString();	
-			var key = year + month + day;
-//			console.log(key);
-			var len = EVENTS.length;
-			if (len > 0) {
 			
-			for (var k = 0; k < len; k++){
-				if(key == EVENTS[k].key){
+			var key = year + month + day;
+			console.log(key);
+			var len = EVENTS.length;
+			if (len > 0) {			
+				for (var k = 0; k < len; k++){
+					if(key == EVENTS[k].key){
 						EVENTS[k].count = EVENTS[k].count + 1;
 						document.getElementById(key).style.height = (EVENTS[k].count * 10) + "px";							
-				} else {
+					} else {
 						var e = new Event(time, key);
 						e.count = 1;
 												
@@ -53,9 +53,9 @@ var add = function add(sender, msg){
 					 	container.insertBefore(bar, current[0]);
 						 	
 						EVENTS.push(e);
-						console.log(EVENTS.length);
+						console.log(key + " added with count " + e.count);
+					}
 				}
-			}
 		} else {
 			console.log(key + " is first element");
 			var e = new Event(time, key);

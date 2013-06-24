@@ -18,10 +18,12 @@ var add = function(sender, msg){
 		objs = objs.split(",");
 	
 		var num = objs.length;
-		var time = new Date();
-//		var e = new Event(time, msg);
+//		var time = new Date();
 
-//		EVENTS.push(e)	
+//		var e = new Event(msg);
+
+		EVENTS.push(e)	
+	
 	
 	
 		var container = document.getElementById("container");

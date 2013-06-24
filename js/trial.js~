@@ -21,7 +21,7 @@ var add = function add(sender, msg){
 	objs = objs.split(",");
 	
 	for (var i = 0; i < objs.length; i++){
-			var time = new Date(obsj[i]);
+			var time = new Date(obj[i]);
 			var month = time.getMonth();
 			if (month < 10){
 				month = "0" + month;				
@@ -52,5 +52,13 @@ var add = function add(sender, msg){
 				}
 			}
 		}
-
 };
+
+var send = function send(){
+	OWF.Eventing.publish("testChannel2", new Date(this.id));
+
+}
+
+owfdojo.addOnLoad(function(){
+	OWF.ready(init);
+});

@@ -21,7 +21,7 @@ var add = function add(sender, msg){
 	objs = objs.split(",");
 	
 	for (var i = 0; i < objs.length; i++){
-			var time = new Date(obsj[i]);
+			var time = new Date(objs[i]);
 			var month = time.getMonth();
 			if (month < 10){
 				month = "0" + month;				

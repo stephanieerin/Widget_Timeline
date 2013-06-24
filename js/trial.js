@@ -22,7 +22,7 @@ var add = function add(sender, msg){
 	
 	for (var i = 0; i < objs.length; i++){
 			var time = new Date(parseInt(objs[i]));
-			console.log(time);
+//			console.log(time);
 			var month = time.getMonth().toString();
 			if (month < 10){
 				month = "0" + month;				
@@ -30,7 +30,7 @@ var add = function add(sender, msg){
 			var day = time.getDate().toString();
 			var year = time.getYear().toString();	
 			var key = year + month + day;
-			console.log(key);
+//			console.log(key);
 			
 			if (EVENTS.length > 0) {
 			
@@ -53,6 +53,7 @@ var add = function add(sender, msg){
 					 	container.insertBefore(bar, current[0]);
 						 	
 						EVENTS.push(e);
+						console.log(EVENTS.length);
 				}
 			}
 		} else {

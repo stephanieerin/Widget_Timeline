@@ -4,7 +4,7 @@
 <body>
 <div id="container"></div>
 	<script type="text/javascript" >
-		document.getElementById("container").innerHTML = new Date(1387959625000);
+		document.getElementById("container").innerHTML = new Date("1387959625000");
 	</script>
 </body>
 

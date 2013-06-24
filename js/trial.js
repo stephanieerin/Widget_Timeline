@@ -31,10 +31,10 @@ var add = function add(sender, msg){
 			var year = time.getYear().toString();	
 			var key = year + month + day;
 //			console.log(key);
+			var len = EVENTS.length;
+			if (len > 0) {
 			
-			if (EVENTS.length > 0) {
-			
-			for (var k = 0; k < EVENTS.length; k++){
+			for (var k = 0; k < len; k++){
 				if(key == EVENTS[k].key){
 						EVENTS[k].count = EVENTS[k].count + 1;
 						document.getElementById(key).style.height = (EVENTS[k].count * 10) + "px";							

@@ -20,11 +20,6 @@ var add = function(sender, msg){
 		var num = objs.length;
 		var time = new Date();
 
-		var e = new Event(msg);
-
-		EVENTS.push(e)	
-	
-	
 	
 		var container = document.getElementById("container");
 		var current = container.childNodes;

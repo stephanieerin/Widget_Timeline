@@ -18,9 +18,9 @@ var add = function(sender, msg){
 		objs = objs.split(",");
 	
 		var num = objs.length;
-//		var time = new Date();
+		var time = new Date();
 
-//		var e = new Event(msg);
+		var e = new Event(msg);
 
 		EVENTS.push(e)	
 	

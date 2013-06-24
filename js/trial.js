@@ -1,3 +1,5 @@
+OWF.relayFile = '/owf-sample-html/js/eventing/rpc_relay.uncompressed.html';
+
 // have a global array of current bars
 var EVENTS = [];	
 function Event(t, k){
